@@ -7,6 +7,9 @@ When /^I do a capybara search that triggers the nested synchronize bug/ do
     end
   rescue Capybara::ElementNotFound; end
 
+  # Uncomment this to use the workaround...
+  #load 'lib/workaround.rb'
+
   STDOUT.puts '='*100
   # Hangs (Exponential wait time (40*40))
   within ".some_div_that_really_exists" do
